@@ -1,21 +1,21 @@
-function [ result ] = MeanMatrix( data )
-
+% Calculates the mean of the input data (in the form of a matrix)
+% input: data
+% return: mean
+% author: Adam Jaamour (aj645)
+function [mean] = MeanMatrix(data)
     %% FIELDS
-    sizeMatrix = size(data);
-    columns = sizeMatrix(1);
-    rows = sizeMatrix(2);
-    result = zeros(1, columns);
+    columns = size(data, 1);        % # of columns in input data
+    rows = size(data, 2);           % # of rows in input data
+    mean = zeros(1, columns);       % initialize mean matrix with # of columns in input data
 
-    %% LOOP
+    %% CALCULATIONS
+    % loops through each element of a column for each column,
+    % and calculates mean for each column.
     for i = 1:rows
-        counter = 0;
-        total = 0;
+        total = 0;                      % store sum of all elements in a column
         for j = 1:columns
-            counter = counter + 1;
             total = total + data(j,i);
         end
-        result(1,i) = total/counter;
+        mean(1,i) = total/columns;      % calculate mean for each column
     end
-    
 end
-
