@@ -2,7 +2,7 @@ clear;
 clc;
 
 %% Generate random data to test MeanMatrix and CovarianceMatrix functions
-data = rand(22,3);
+data = rand(5,5);
 
 %% Run chain code script on a input image
 %run chain/chainCodeScript

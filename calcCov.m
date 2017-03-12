@@ -2,7 +2,7 @@
 % input: data (matrix of size MxN)
 % return: covariance
 % author: Adam Jaamour (aj645)
-function [covariance] = CovarianceMatrix(data)
+function [covariance] = calcCov(data)
     %% FIELDS
     columns = size(data,1);         % retrieve size of input matrix column
     one = ones(columns,columns);    % generates a square matrix of 1's with size of column of input matrix

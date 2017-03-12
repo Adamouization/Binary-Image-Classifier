@@ -2,7 +2,7 @@
 % input: data
 % return: mean
 % author: Adam Jaamour (aj645)
-function [mean] = MeanMatrix(data)
+function [mean] = calcMean(data)
     %% FIELDS
     columns = size(data, 1);        % # of columns in input data
     rows = size(data, 2);           % # of rows in input data
