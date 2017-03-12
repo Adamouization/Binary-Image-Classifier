@@ -6,6 +6,7 @@
 % one you use.
 
 clear all;
+clc;
 
 D = rand(11,6);
 

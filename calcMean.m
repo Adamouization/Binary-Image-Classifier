@@ -6,7 +6,7 @@ function [mean] = calcMean(data)
     %% FIELDS
     columns = size(data, 1);        % # of columns in input data
     rows = size(data, 2);           % # of rows in input data
-    mean = zeros(1, columns);       % initialize mean matrix with # of columns in input data
+    mean = zeros(1, rows);       % initialize mean matrix with # of columns in input data
 
     %% CALCULATIONS
     % loops through each element of a column for each column,
