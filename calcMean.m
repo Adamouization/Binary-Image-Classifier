@@ -4,8 +4,8 @@
 % author: Adam Jaamour (aj645)
 function [mean] = calcMean(data)
     %% FIELDS
-    columns = size(data, 1);        % # of columns in input data
-    rows = size(data, 2);           % # of rows in input data
+    columns = size(data, 1);        % # of columns in input data (feature vectors)
+    rows = size(data, 2);           % # of rows in input data (data points)
     mean = zeros(1, rows);       % initialize mean matrix with # of columns in input data
 
     %% CALCULATIONS
