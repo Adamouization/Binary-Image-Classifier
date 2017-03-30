@@ -1,5 +1,4 @@
-% produces a data matrix for a given class
-% note: features are stored in the columns of the matrix, while each row is a separate shape instance.
+% Produces a data matrix for a given class
 function D = getDataMatrix(imagedir, class, N)
     verifyImageDir(imagedir);
     imagelist = dir(sprintf('%s/%s*.gif', imagedir, class));
@@ -12,3 +11,5 @@ function D = getDataMatrix(imagedir, class, N)
         D(idx, :) = getFeatures(imagepath, N);
     end
 end
+
+% note: features are stored in the columns of the matrix, while each row is a separate shape instance.

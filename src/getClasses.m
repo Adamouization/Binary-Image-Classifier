@@ -1,4 +1,4 @@
-% returnsa all classes
+% Returns all classes
 function classes = getClasses(imagedir)
     verifyImageDir(imagedir);
     imagelist = dir(sprintf('%s/*.gif', imagedir));
