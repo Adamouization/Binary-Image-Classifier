@@ -1,11 +1,13 @@
 clear;
 clc;
 
+%% Load image
 imagedir = 'images';
 verifyImageDir(imagedir);
 imagepath = [imagedir '/train/Butterfly042.gif'];
 
-N = 20; % = number of lowest frequencies to keep
+%% Get feature vectors
+N = 30; % = number of lowest frequencies to keep
 
 features = getFeatures(imagepath,N);
 disp(features);
