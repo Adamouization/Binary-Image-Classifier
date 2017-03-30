@@ -2,7 +2,7 @@ clear;
 close all;
 
 % Directory where images can be found---ensure this is correct
-imagedir = 'images';
+imagedir = '../images';
 
 if exist(imagedir, 'dir') == 0
     disp('Error: Image directory set incorrectly');
