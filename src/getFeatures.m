@@ -28,6 +28,7 @@ function [features] = getFeatures(imagePath,N)
     % Create a new row vector with only needed elements (of size N)
     length = size(filteredFFT,2);
     middle = length/2;
+    middle = round(middle);
     if(filteredFFT(middle) < filteredFFT(middle+1))
         middle = middle + 1;
     end

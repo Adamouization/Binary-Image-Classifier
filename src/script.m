@@ -5,7 +5,6 @@ clc;
 %% Load 1 image for testing purposes
 imagedir = '../images';
 verifyImageDir(imagedir);
-imagepath = [imagedir '/train/Butterfly042.gif'];
 
 
 %% Get number of images in directory
@@ -26,8 +25,8 @@ disp(['Classes detected: ' strjoin(classes)]); disp(' ');
 disp(['Number of images for class:']);
 total_check = 0;
 for i = 1:numClasses
-    numimclasses = getNumImagesForClass(imagedir_train, char(classes(i)));
-    disp([char(classes(i)) ' = ' int2str(numimclasses)]);
+    numimclasses = getNumImagesForClass(imagedir_train, classes{i});
+    disp([classes{i} ' = ' int2str(numimclasses)]);
     total_check = total_check + numimclasses;
 end
 disp(' ');
@@ -41,18 +40,18 @@ else
 end
 
 
-%% Get data matrix for each class
-%
+%% Produce a data matrix for each class
+alldata = cell(numClasses,1); % used to store data matrices for each class
+N = 30; % = number of lowest frequencies to keep
+for j = 1:numClasses
+    alldata{j} = getDataMatrix(imagedir_train, classes{j}, N);
+end
 
 
 %% Get feature vectors
-N = 30; % = number of lowest frequencies to keep
-features = getFeatures(imagepath,N);
+%N = 30; % = number of lowest frequencies to keep
+%features = getFeatures(imagepathMY,N);
 %disp(features);
-
-
-%% Produce a data matrix for each class
-%
 
 
 %% Train classifier
