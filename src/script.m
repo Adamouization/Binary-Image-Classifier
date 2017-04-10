@@ -1,4 +1,4 @@
-clear;
+clear all;
 clc;
 
 
@@ -12,7 +12,7 @@ imagepath = [imagedir '/train/Butterfly042.gif'];
 imagedir_train = [imagedir '/train'];
 imagedir_test = [imagedir '/test'];
 numImages_train = getNumImages(imagedir_train);
-disp(['Number of images in total: ' num2str(numImages_train)]); disp(' ');
+disp(['Number of total training images: ' num2str(numImages_train)]); disp(' ');
 
 
 %% Get all classes
@@ -24,11 +24,25 @@ disp(['Classes detected: ' strjoin(classes)]); disp(' ');
 
 %% Get number of images for each specific classes
 disp(['Number of images for class:']);
+total_check = 0;
 for i = 1:numClasses
-    numimclasses = getNumImagesForClass(imagedir_test, char(classes(i)));
+    numimclasses = getNumImagesForClass(imagedir_train, char(classes(i)));
     disp([char(classes(i)) ' = ' int2str(numimclasses)]);
+    total_check = total_check + numimclasses;
 end
 disp(' ');
+
+
+%% Check all images are correctly retrieved and classed
+if(total_check ~= numImages_train)
+    disp('Training images imported/classification failed'); disp(' ');
+else
+    disp('Training images correctly imported/classed'); disp(' ');
+end
+
+
+%% Get data matrix for each class
+%
 
 
 %% Get feature vectors
