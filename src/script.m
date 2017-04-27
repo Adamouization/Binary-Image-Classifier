@@ -42,7 +42,7 @@ end
 
 %% Produce a data matrix for each class
 alldata = cell(numClasses,1); % used to store data matrices for each class
-N = 30; % = number of lowest frequencies to keep
+N = 10; % = number of lowest frequencies to keep
 for j = 1:numClasses
     alldata{j} = getDataMatrix(imagedir_train, classes{j}, N);
 end
@@ -55,8 +55,10 @@ end
 
 
 %% Train classifier
-%train(imagedir,N);
+train(imagedir_train,N);
 
 
 %% Test classifier
-%
+imagepath = [imagedir_test '/Butterfly051.gif'];
+classname = classify(imagepath);
+disp(classname);
