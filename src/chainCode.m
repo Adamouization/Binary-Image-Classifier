@@ -1,6 +1,5 @@
+% Characterise a binary image using chain code
 function f = chainCode( im )
-
-% Characterise a binary image using chain code.
 
 x=[[-1; -1; 0] [findWhiteSpot(im) ; 0]];
 
