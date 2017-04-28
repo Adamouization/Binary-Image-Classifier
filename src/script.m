@@ -1,3 +1,6 @@
+%%
+% Main script to run to train and test classifier
+% author: Adam Jaamour (aj645)
 clear all;
 clc;
 

@@ -1,8 +1,8 @@
 % Classify the image specified for the given image path
-% Note: should first call the train function, which will save the models to be loaded in this function.)
-function [ classname ] = classify( imagepath )
+% Note: should first call the train function, which will save the models to be loaded in this function.
+function [classname] = classify(imagepath)
 
-    load('models');
+    load('models'); % file generated after training classifier
     
     %Assume all models use the same number of features
     N = length(models(1).mean);

@@ -1,6 +1,7 @@
 % Ensures the covariance matrix is positive semi-definite
 % Ensures that all the eigenvalues are at least a little greater than zero
-function [ C ] = ensurePSD( C )
+function [C] = ensurePSD(C)
+
     thrsh = 0.001; % Choose a small number for the threshold
 
     [U,L] = eig(C);
@@ -8,4 +9,5 @@ function [ C ] = ensurePSD( C )
     L = max(L,thrsh);
     L = diag(L);
     C = U*L*U';
+    
 end

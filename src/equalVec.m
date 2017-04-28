@@ -8,3 +8,5 @@ function bool = equalVec(a,b)
           bool=0; 
        end
     end
+    
+end
