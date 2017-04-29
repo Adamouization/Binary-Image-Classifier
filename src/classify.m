@@ -5,7 +5,7 @@ function [classname] = classify(imagepath)
     load('models'); % file generated after training classifier
     
     %Assume all models use the same number of features
-    N = length(models(1).mean);
+    N = length(models(1).mean);  
     
     features = getFeatures(imagepath, N);
     

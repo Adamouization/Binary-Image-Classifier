@@ -30,7 +30,7 @@ function [ features ] = getFeatures( image_path , N)
     filter(end-N+3:end) = 1;
     %filter(1) = 0;
 
-    filteredFFT = anglesFFT .* filter; % Apply the filter by scalar multipliacation
+    filteredFFT = anglesFFT .* filter; % AIpply the filter by scalar multipliacation
 
     %Reconstructed the angles using the inverse FFT
     %The FFT works with imaginary numbers. Since all the numbers in the chain
