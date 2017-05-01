@@ -22,3 +22,6 @@ src/models.mat
 report.docx
 *.docx
 *.tmp
+*.xlsx
+images/results/
+PlagiarismStatementAdamJaamourSigned.pdf
