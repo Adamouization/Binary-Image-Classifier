@@ -20,3 +20,5 @@ octave-workspace
 specs
 src/models.mat
 report.docx
+*.docx
+*.tmp
