@@ -8,16 +8,17 @@ function train(imagedir,N)
     classes = getClasses(imagedir);
     totalImages = getNumImages(imagedir);
     
-    for idx = 1:length(classes)
+    % GMM training
+    for idx = 1:length(classes) % calculate mean, covariance and prior for each class
         class = classes{idx};
         models(idx).name = class;
-        dataMatrix = getDataMatrix(imagedir, class, N);
+        dataMatrix = getDataMatrix(imagedir, class, N); % get all features
         models(idx).mean = transpose(calcMean(dataMatrix));
         models(idx).cov = ensurePSD(calcCov(dataMatrix));
-        models(idx).prior = ((getNumImagesForClass(imagedir,class)) / totalImages);
+        models(idx).prior = ((getNumImagesForClass(imagedir,class)) / totalImages); % class weight
     end
-    
     save('models');
+    
     disp('Successfully trained classifier and saved data in "models.mat"'); disp(' ');
     
     % verification that sum of priors is equal to 1

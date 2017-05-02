@@ -14,11 +14,12 @@ imagedir_extra = [imagedir '/extra'];
 
 
 %% Train classifier with training set of binary images
-N = 10; % = number of lowest frequencies to keep
+N = 9; % = number of lowest frequencies to keep
 train(imagedir_train, N);
 
 
 %% Test classifier with new testing set of binary images
+disp(['Features length N = ' int2str(N)]); disp(' ');
 confusion_matrix = getConfusionMatrix(imagedir_test);
 disp(confusion_matrix);
 disp(' ');

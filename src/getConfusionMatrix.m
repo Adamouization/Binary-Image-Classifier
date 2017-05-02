@@ -23,7 +23,7 @@ function [ confusion_matrix ] = getConfusionMatrix(imagedir)
     % loop through each class
     for i = 1:numClasses
         imagelist = dir(sprintf('%s/%s*.gif', imagedir, classes{i}));
-
+    
         if (isempty(imagelist))
             error('No images for class');
         end
