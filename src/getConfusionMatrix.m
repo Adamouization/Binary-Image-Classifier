@@ -56,7 +56,7 @@ function [ confusion_matrix ] = getConfusionMatrix(imagedir)
     
     % calculate final classifier accuracy with this testing set
     score = (accumulator / totalImages)*100;
-    disp(['Confusion matrix score = ' num2str(score) '%']); disp(' ');
+    disp(['Confusion matrix score = ' int2str(score) '%']); disp(' ');
     
 end
 
