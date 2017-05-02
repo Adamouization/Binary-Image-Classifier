@@ -3,6 +3,7 @@
 % return: covariance
 % author: Adam Jaamour (aj645)
 function [covariance] = calcCov(data)
+
     %% FIELDS
     columns = size(data,1);         % retrieve size of input matrix column
     one = ones(columns,columns);    % generates a square matrix of 1's with size of column of input matrix
@@ -19,4 +20,5 @@ function [covariance] = calcCov(data)
     % deviation sum of squares matrix by n.
     deviation = data - (one*data/(columns));                        % calculates deviation matrix
     covariance = (transpose(deviation) * deviation)/(columns-1);    % calculates covariance matrix
+        
 end

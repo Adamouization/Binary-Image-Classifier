@@ -14,7 +14,7 @@ imagedir_extra = [imagedir '/extra'];
 
 
 %% Train classifier with training set of binary images
-N = 9; % = number of lowest frequencies to keep
+N = 8; % = number of lowest frequencies to keep
 train(imagedir_train, N);
 
 

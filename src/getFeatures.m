@@ -1,5 +1,5 @@
 % Returns N features as a row vector
-function [ features ] = getFeatures( image_path , N)
+function [features] = getFeatures(image_path ,N)
 
     %% Input an image, 
     im = imread(image_path);
@@ -28,17 +28,15 @@ function [ features ] = getFeatures( image_path , N)
 
     % Both the positive and negative low frequencies must be kept
     % filter(1) is the zero (DC) frequency, so there will be (N*2)-1 ones in total
-    %filter(1:N) = 1; 
-    filter(2:N+1) = 1;
-    filter(end-N+2:end) = 1;
+    filter(3:N+2) = 1;
 
-    filteredFFT = anglesFFT .* filter; % AIpply the filter by scalar multipliacation
+    filteredFFT = anglesFFT .* filter; % Apply the filter by scalar multipliacation
 
     % The FFT works with imaginary numbers but since all the numbers in the chain
     % code are real, the reconstruction should be real too.
     absFiltered = real(abs(filteredFFT)); 
 
-    features = (absFiltered(2:N+1))'; % transpose features 
+    features = (absFiltered(3:N+2))'; % transpose features 
 
 end
 
